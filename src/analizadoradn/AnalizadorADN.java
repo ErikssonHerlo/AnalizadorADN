@@ -12,7 +12,7 @@ import java.util.Scanner;
  * @author erikssonherlo
  */
 public class AnalizadorADN {
-    String Analisis1, Analisis2, Coincidencias = "";
+    public String Analisis1, Analisis2, Coincidencias = "";
     int tamaño1, tamaño2;
     int entrar;
     int aux=0;
