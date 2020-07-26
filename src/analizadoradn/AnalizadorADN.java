@@ -15,7 +15,6 @@ public class AnalizadorADN {
     public String Patrones = "",Analisis1, Analisis2, Coincidencias = "";
     int tamaño1, tamaño2;
     int entrar;
-    boolean validar1 = false, validar2 = true;
     int aux=0;
     public AnalizadorADN() {
         //Metodo Constructor
@@ -37,16 +36,16 @@ public class AnalizadorADN {
                 
                 for (int c = 0; c < i; c++) 
                 {    
-                if (Analisis2.contains(Analisis1.substring(c, i)) && Coincidencias.length() < Analisis1.substring(c, i).length()) 
+                if (Analisis2.contains(Analisis1.substring(c, i)) &&    
+                    Coincidencias.length() < Analisis1.substring(c, i).length()) 
                 {
                   Coincidencias = Analisis1.substring(c, i);                  
                   System.out.println("Posible Patron: "+ Coincidencias);
                   Patrones += Coincidencias +"\n";
-                  
                 }  
                 }
             }
-            System.out.println("Resultado con mayor Coincidencia: "+ Coincidencias+"\n"+validar1+validar2);
+            System.out.println("Resultado con mayor Coincidencia: "+ Coincidencias+"\n");
             break;
             case 2:
             for (int i = tamaño2; i >= 0; i--)
