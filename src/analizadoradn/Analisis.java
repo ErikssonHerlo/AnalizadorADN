@@ -5,15 +5,19 @@
  */
 package analizadoradn;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author erikssonherlo
  */
 public class Analisis extends javax.swing.JFrame {
-
+    public String Aux1;
+    public String Aux2;
     /**
      * Creates new form Analisis
      */
+    AnalizadorADN Analisis = new AnalizadorADN();
     public Analisis() {
         initComponents();
     }
@@ -28,11 +32,11 @@ public class Analisis extends javax.swing.JFrame {
     private void initComponents() {
 
         Titulo = new javax.swing.JLabel();
-        S1Text = new javax.swing.JTextField();
-        S2Text = new javax.swing.JTextField();
+        TextoADN1 = new javax.swing.JTextField();
+        TextoADN2 = new javax.swing.JTextField();
         Salir = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
         Analizador = new javax.swing.JButton();
         Fondo = new javax.swing.JLabel();
 
@@ -44,21 +48,23 @@ public class Analisis extends javax.swing.JFrame {
         Titulo.setText("Analizador ADN");
         getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 53));
 
-        S1Text.addActionListener(new java.awt.event.ActionListener() {
+        TextoADN1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                S1TextActionPerformed(evt);
+                TextoADN1ActionPerformed(evt);
             }
         });
-        getContentPane().add(S1Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 290, -1));
+        getContentPane().add(TextoADN1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 130, 290, -1));
 
-        S2Text.addActionListener(new java.awt.event.ActionListener() {
+        TextoADN2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                S2TextActionPerformed(evt);
+                TextoADN2ActionPerformed(evt);
             }
         });
-        getContentPane().add(S2Text, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 290, -1));
+        getContentPane().add(TextoADN2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 200, 290, -1));
 
+        Salir.setBackground(new java.awt.Color(43, 46, 46));
         Salir.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 15)); // NOI18N
+        Salir.setForeground(new java.awt.Color(250, 250, 244));
         Salir.setText("Salir");
         Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -67,17 +73,19 @@ public class Analisis extends javax.swing.JFrame {
         });
         getContentPane().add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 310, 40));
 
-        jLabel2.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(4, 2, 2));
-        jLabel2.setText("Secuencia de ADN No. 2:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 230, 30));
-
         jLabel3.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 18)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(4, 2, 2));
         jLabel3.setText("Secuencia de ADN No. 1:");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 100, 230, 30));
 
+        jLabel2.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 18)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(4, 2, 2));
+        jLabel2.setText("Secuencia de ADN No. 2:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 170, 230, 30));
+
+        Analizador.setBackground(new java.awt.Color(43, 46, 46));
         Analizador.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 15)); // NOI18N
+        Analizador.setForeground(new java.awt.Color(250, 250, 244));
         Analizador.setText("Realizar Analisis");
         Analizador.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -95,7 +103,10 @@ public class Analisis extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AnalizadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnalizadorActionPerformed
-        
+        Aux1 = TextoADN1.getText();
+        Aux2 = TextoADN1.getText();
+        Analisis.Analizar(Aux1,Aux2);
+        JOptionPane.showMessageDialog(null,"Posibles Patrones: \n"+Analisis.Patrones+"Resultado del Analisis del ADN: \n"+Analisis.Coincidencias);
        // TODO add your handling code here:
     }//GEN-LAST:event_AnalizadorActionPerformed
 
@@ -103,13 +114,13 @@ public class Analisis extends javax.swing.JFrame {
         System.exit(0);        // TODO add your handling code here:
     }//GEN-LAST:event_SalirActionPerformed
 
-    private void S1TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_S1TextActionPerformed
-        String Aux1 = S1Text.getText();
-    }//GEN-LAST:event_S1TextActionPerformed
+    private void TextoADN1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoADN1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextoADN1ActionPerformed
 
-    private void S2TextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_S2TextActionPerformed
-       String Aux2 = S2Text.getText(); // TODO add your handling code here:
-    }//GEN-LAST:event_S2TextActionPerformed
+    private void TextoADN2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TextoADN2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TextoADN2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -141,6 +152,8 @@ public class Analisis extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
+             
+
                 new Analisis().setVisible(true);
             }
         });
@@ -149,9 +162,9 @@ public class Analisis extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Analizador;
     private javax.swing.JLabel Fondo;
-    private javax.swing.JTextField S1Text;
-    private javax.swing.JTextField S2Text;
     private javax.swing.JButton Salir;
+    private javax.swing.JTextField TextoADN1;
+    private javax.swing.JTextField TextoADN2;
     private javax.swing.JLabel Titulo;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

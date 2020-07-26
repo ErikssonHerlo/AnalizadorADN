@@ -5,6 +5,8 @@
  */
 package analizadoradn;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author erikssonherlo
@@ -41,7 +43,9 @@ public class Interfaz extends javax.swing.JFrame {
         Titulo.setText("Analizador ADN");
         getContentPane().add(Titulo, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, 53));
 
+        Analizar.setBackground(new java.awt.Color(43, 46, 46));
         Analizar.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 15)); // NOI18N
+        Analizar.setForeground(new java.awt.Color(250, 250, 244));
         Analizar.setText("Analizar ADN");
         Analizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -50,7 +54,9 @@ public class Interfaz extends javax.swing.JFrame {
         });
         getContentPane().add(Analizar, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 120, 310, 40));
 
+        Informacion.setBackground(new java.awt.Color(43, 46, 46));
         Informacion.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 15)); // NOI18N
+        Informacion.setForeground(new java.awt.Color(250, 250, 244));
         Informacion.setText("Ver Información del Estudiante");
         Informacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -59,7 +65,9 @@ public class Interfaz extends javax.swing.JFrame {
         });
         getContentPane().add(Informacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 190, 310, 40));
 
+        Salir.setBackground(new java.awt.Color(43, 46, 46));
         Salir.setFont(new java.awt.Font("DejaVu Serif Condensed", 1, 15)); // NOI18N
+        Salir.setForeground(new java.awt.Color(250, 250, 244));
         Salir.setText("Salir");
         Salir.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -97,7 +105,9 @@ public class Interfaz extends javax.swing.JFrame {
     }//GEN-LAST:event_SalirActionPerformed
 
     private void InformacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_InformacionActionPerformed
-        // TODO add your handling code here:
+           // TODO add your handling code here:
+            JOptionPane.showMessageDialog(null,"Información del Estudiante:\n"+"Nombre: Eriksson José Hernández López \n"+"Registro Academico: 201830459 \n");
+       
     }//GEN-LAST:event_InformacionActionPerformed
 
 

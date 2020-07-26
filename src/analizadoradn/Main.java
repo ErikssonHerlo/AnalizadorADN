@@ -12,10 +12,14 @@ import java.util.Scanner;
  * @author erikssonherlo
  */
 public class Main {
+    
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        String Cadena1 = "", Cadena2 = "";
+        Interfaz Inicio = new Interfaz();
+        Inicio.setVisible(true);
         // TODO code application logic here
         
         Scanner elegir = new Scanner(System.in);
@@ -35,7 +39,7 @@ public class Main {
                 case 1:
                     
                     AnalizadorADN LlamarA = new AnalizadorADN();
-                    LlamarA.Analizar();
+                    //LlamarA.Analizar(Cadena1,Cadena2);
                     break;
 
                 case 2:
